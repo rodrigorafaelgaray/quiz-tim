@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <a href="#contenu" class="lienrapide screen-reader-only focusable">Allez au contenu</a>
     <header role="banner">
         <a href="../index.html">
             <svg xmlns="http://www.w3.org/2000/svg" class="logoQuizTIM" viewBox="0 0 174.55 28.58"
@@ -39,135 +40,138 @@
                 </div>
            </div>
         </div>
-        <fieldset id="Q1">
-            <legend>
-                <h2>Comment les pingouins se gardent-ils au chaud durant les temps froids ?</h2>
-            </legend>
-            <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-            <ul class="choixReponses">
-                <!-- Les choix de réponses sont A B ou C -->
-                <!-- Observer la nomenclature des identifiants: Q1A, Q1B, Q1C
-                     une concaténation entre le id de la question et ce choid de réponse -->
-                <li class="choix choixA">
-                    <input id="Q1A" type="radio" name="Q1" value="A" required class="visuallyhidden">
-                    <label for="Q1A">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        En s’enfouissant sous la neige
-                    </label>
-                </li>
-                <li class="choix choixB">
-                    <input id="Q1B" type="radio" name="Q1" value="B" class="visuallyhidden">
-                    <label for="Q1B">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        En se blottissant entre eux
-                    </label>
-                </li>
-                <li class="choix choixC">
-                    <input id="Q1C" type="radio" name="Q1" value="C" class="visuallyhidden">
-                    <label for="Q1C">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        En battant leurs ailes
-                    </label>
-                </li>
-                <li class="choix choixD">
-                    <input id="Q1D" type="radio" name="Q1" value="D" class="visuallyhidden">
-                    <label for="Q1D">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        En nageant dans l’eau chaude
-                    </label>
-                </li>
-            </ul>
-            <h3 class="erreur visuallyhidden"></h3>
-            <p class="explicationReponse"></p>
-        </fieldset>
+        <form action="">
+            
+            <fieldset id="Q1">
+                <legend>
+                    <h2>Comment les pingouins se gardent-ils au chaud durant les temps froids ?</h2>
+                </legend>
+                <picture>
+                    <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
+                    <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
+                </picture>
+                <ul class="choixReponses">
+                    <li class="choix choixA">
+                        <input id="Q1A" type="radio" name="Q1" value="A" required class="visuallyhidden">
+                        <label for="Q1A">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            En s’enfouissant sous la neige
+                        </label>
+                    </li>
+                    <li class="choix choixB">
+                        <input id="Q1B" type="radio" name="Q1" value="B" class="visuallyhidden">
+                        <label for="Q1B">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            En se blottissant entre eux
+                        </label>
+                    </li>
+                    <li class="choix choixC">
+                        <input id="Q1C" type="radio" name="Q1" value="C" class="visuallyhidden">
+                        <label for="Q1C">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            En battant leurs ailes
+                        </label>
+                    </li>
+                    <li class="choix choixD">
+                        <input id="Q1D" type="radio" name="Q1" value="D" class="visuallyhidden">
+                        <label for="Q1D">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            En nageant dans l’eau chaude
+                        </label>
+                    </li>
+                </ul>
+                <h3 class="erreur visuallyhidden"></h3>
+                <p class="explicationReponse"></p>
+            </fieldset>
 
-        <fieldset id="Q2">
-            <legend>
-                <h2>Combien de temps un pingouin peut-il retenir son souffle sous l’eau ?</h2>
-            </legend>
-            <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-            <ul class="choixReponses">
-                <!-- Les choix de réponses sont A B ou C -->
-                <!-- Observer la nomenclature des identifiants: Q1A, Q1B, Q1C
-                     une concaténation entre le id de la question et ce choid de réponse -->
-                <li class="choix choixA">
-                    <input id="Q2A" type="radio" name="Q2" value="A" required class="visuallyhidden">
-                    <label for="Q2A">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        1 minute
-                    </label>
-                </li>
-                <li class="choix choixB">
-                    <input id="Q2B" type="radio" name="Q2" value="B" class="visuallyhidden">
-                    <label for="Q2B">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        5 minutes
-                    </label>
-                </li>
-                <li class="choix choixC">
-                    <input id="Q2C" type="radio" name="Q2" value="C" class="visuallyhidden">
-                    <label for="Q2C">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        10 minutes
-                    </label>
-                </li>
-                <li class="choix choixD">
-                    <input id="Q2D" type="radio" name="Q2" value="D" class="visuallyhidden">
-                    <label for="Q2D">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        20 minutes
-                    </label>
-                </li>
-            </ul>
-            <h3 class="erreur visuallyhidden"></h3>
-            <p class="explicationReponse"></p>
-        </fieldset>
+            <fieldset id="Q2">
+                <legend>
+                    <h2>Combien de temps un pingouin peut-il retenir son souffle sous l’eau ?</h2>
+                </legend>
+                <picture>
+                    <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
+                    <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
+                </picture>
+                <ul class="choixReponses">
+                    <li class="choix choixA">
+                        <input id="Q2A" type="radio" name="Q2" value="A" required class="visuallyhidden">
+                        <label for="Q2A">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            1 minute
+                        </label>
+                    </li>
+                    <li class="choix choixB">
+                        <input id="Q2B" type="radio" name="Q2" value="B" class="visuallyhidden">
+                        <label for="Q2B">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            5 minutes
+                        </label>
+                    </li>
+                    <li class="choix choixC">
+                        <input id="Q2C" type="radio" name="Q2" value="C" class="visuallyhidden">
+                        <label for="Q2C">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            10 minutes
+                        </label>
+                    </li>
+                    <li class="choix choixD">
+                        <input id="Q2D" type="radio" name="Q2" value="D" class="visuallyhidden">
+                        <label for="Q2D">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            20 minutes
+                        </label>
+                    </li>
+                </ul>
+                <h3 class="erreur visuallyhidden"></h3>
+                <p class="explicationReponse"></p>
+            </fieldset>
 
-        <fieldset id="Q3">
-            <legend>
-                <h2>Lequel des animaux suivants n’est pas un prédateur des pingouins ?</h2>
-            </legend>
-            <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-            <ul class="choixReponses">
-                <!-- Les choix de réponses sont A B ou C -->
-                <!-- Observer la nomenclature des identifiants: Q1A, Q1B, Q1C
-                     une concaténation entre le id de la question et ce choid de réponse -->
-                <li class="choix choixA">
-                    <input id="Q3A" type="radio" name="Q3" value="A" required class="visuallyhidden">
-                    <label for="Q3A">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        L’ours polaire
-                    </label>
-                </li>
-                <li class="choix choixB">
-                    <input id="Q3B" type="radio" name="Q3" value="B" class="visuallyhidden">
-                    <label for="Q3B">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        L’orque
-                    </label>
-                </li>
-                <li class="choix choixC">
-                    <input id="Q3C" type="radio" name="Q3" value="C" class="visuallyhidden">
-                    <label for="Q3C">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        Le phoque
-                    </label>
-                </li>
-                <li class="choix choixD">
-                    <input id="Q3D" type="radio" name="Q2" value="D" class="visuallyhidden">
-                    <label for="Q3D">
-                        <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                        Les pingouins n’ont pas de prédateurs naturels
-                    </label>
-                </li>
-            </ul>
-            <h3 class="erreur visuallyhidden"></h3>
-            <p class="explicationReponse"></p>
+            <fieldset id="Q3">
+                <legend>
+                    <h2>Lequel des animaux suivants n’est pas un prédateur des pingouins ?</h2>
+                </legend>
+                <picture>
+                    <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
+                    <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
+                </picture>
+                <ul class="choixReponses">
+                    <li class="choix choixA">
+                        <input id="Q3A" type="radio" name="Q3" value="A" required class="visuallyhidden">
+                        <label for="Q3A">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            L’ours polaire
+                        </label>
+                    </li>
+                    <li class="choix choixB">
+                        <input id="Q3B" type="radio" name="Q3" value="B" class="visuallyhidden">
+                        <label for="Q3B">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            L’orque
+                        </label>
+                    </li>
+                    <li class="choix choixC">
+                        <input id="Q3C" type="radio" name="Q3" value="C" class="visuallyhidden">
+                        <label for="Q3C">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            Le phoque
+                        </label>
+                    </li>
+                    <li class="choix choixD">
+                        <input id="Q3D" type="radio" name="Q2" value="D" class="visuallyhidden">
+                        <label for="Q3D">
+                            <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
+                            Les pingouins n’ont pas de prédateurs naturels
+                        </label>
+                    </li>
+                </ul>
+                <h3 class="erreur visuallyhidden"></h3>
+                <p class="explicationReponse"></p>
+            </fieldset>
             <button class="boutonFinQuiz">Voir les resultats</button>
-        </fieldset>
+        </form>
     </main>
     <footer>
-        <p>Rodrigo Garay @ Cégep de Sainte-Foy, Design d’interface 2, 2023</p>
+        <p>Rodrigo Garay @ Cégep de Sainte-Foy, Design d’interface 2 et Intégration 2, 2023</p>
     </footer>
 </body>
 
