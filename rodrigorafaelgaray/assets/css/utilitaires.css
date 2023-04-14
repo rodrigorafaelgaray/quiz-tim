@@ -3,9 +3,14 @@
 
 /****** Variables (peuvent être utilisées dans tous les fichiers) *******/
 :root {
-    --couleur-bandeau-superieur: #575757;
-    --couleur-svg-bandeau-superieur: #E7E7E7;
-    --couleur-svg-bandeau-superieur-hover: #fff;
+    --couleur-bandeau-superieur: #1F487A;
+    --couleur-svg-bandeau-superieur: #ffffff;
+    --couleur-svg-bandeau-superieur-hover: #ffffff;
+    --couleur-dominante-principal: #1F487A;
+    --couleur-dominante-clair: #D6ECFC;
+    --couleur-accent_1_fonce: #5DA29D;
+    --couleur-accent_1_clair: #9FCDC9;
+    --couleur-accent_2_clair: #F6CC75;
 }
 
 /*** Clearfix ***/

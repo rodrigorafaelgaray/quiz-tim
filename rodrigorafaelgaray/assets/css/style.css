@@ -28,7 +28,10 @@
 
 /* STYLE GÉNÉRALE */
 
-
+main{
+    padding: 1%;
+    background-color: #D6ECFC;
+}
 
 
 /* HEADER */
