@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titre du quiz - Quiz TIM</title>
+    <title>Les pengouins - Quiz TIM</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/235w/quiz_imagePrincipale_235w.jpg" type="image/x-icon">
+    <script defer src="assets/js/app.js"></script>
 </head>
 
 <body>
@@ -47,145 +49,258 @@
             </div>
         </section>
 
-       <section id="questions" class="visuallyhidden">
-            <div class="questions__entete">
-                <h1>Les pingouins</h1>
-                <p class="sous-titre">En connaissez-vous beaucoup sur cette espèce d’oiseau fascinante ?</p>
+       <section id="questions visuallyhidden">
+            <div class="questions__entete visuallyhidden">
+                <h1 class="questions__entete__titre">Les pingouins</h1>
+                <p class="questions__entete__sous-titre">En connaissez-vous beaucoup sur cette espèce d’oiseau fascinante ?</p>
                 <div class="section__barre-de-progression">
-                    <p><strong>Question 1/3</strong></p>
+                    <p class="section__barre-de-progression__texte"><strong>Question 1/3</strong></p>
                     <div class="progressbar-wrapper">
-                        <div class="progressbar progres__1"></div>
+                        <div class="progressbar progres__0"></div>
                     </div>
                 </div>
             </div>
             <form action="">
                 
-                <fieldset id="Q1" class="">
-                    <legend>
-                        <h2>Comment les pingouins se gardent-ils au chaud durant les temps froids ?</h2>
-                    </legend>
-                    <picture>
-                        <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
-                        <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-                    </picture>
+                <fieldset id="Q1" class="question visuallyhidden">
+                    <div class="enonoce-question">
+                        <legend class="question__texte">
+                            <h2>Comment les pingouins se gardent-ils au chaud durant les temps froids ?</h2>
+                        </legend> 
+                        <img class="questions__imagePrincipale" src="assets/images/470w/quiz_question1_principale_470w.jpg" alt="">
+                    </div>
+
                     <ul class="choixReponses">
                         <li class="choix choixA">
-                            <input id="Q1A" type="radio" name="Q1" value="A" required class="visuallyhidden">
+                            <input id="Q1A" type="radio" name="Q1" value="A" class="visuallyhidden">
                             <label for="Q1A">
                                 <img src="assets/images/320w/quiz_question1_choix1_320w.jpg" alt="">
-                                <span class="bouton__choix">En s’enfouissant sous la neige</span>  
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">En s’enfouissant sous la neige</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixB">
                             <input id="Q1B" type="radio" name="Q1" value="B" class="visuallyhidden">
                             <label for="Q1B">
                                 <img src="assets/images/320w/quiz_question1_choix2_320w.jpg" alt="">
-                                En se blottissant entre eux
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">En se blottissant entre eux</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixC">
                             <input id="Q1C" type="radio" name="Q1" value="C" class="visuallyhidden">
                             <label for="Q1C">
                                 <img src="assets/images/320w/quiz_question1_choix3_320w.jpg" alt="">
-                                En battant leurs ailes
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">En battant leurs ailes</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixD">
                             <input id="Q1D" type="radio" name="Q1" value="D" class="visuallyhidden">
                             <label for="Q1D">
                                 <img src="assets/images/320w/quiz_question1_choix4_320w.jpg" alt="">
-                                En nageant dans l’eau chaude
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">En nageant dans l’eau chaude</p>
+                                </div>
                             </label>
                         </li>
                     </ul>
-                    <h3 class="erreur visuallyhidden"></h3>
+                    <h3 class="retroactionReponse"></h3>
                     <p class="explicationReponse"></p>
+                    <!-- <div class="boutonValiderReponseConteneur visuallyhidden">
+                        <button class="boutonValiderReponse" disabled>
+                            <span>Valider ma réponse</span> 
+                            <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                                <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.208333" stop-color="white"/>
+                                <stop offset="1" stop-color="#D6ECFC"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                
+                        </button>
+                    </div> -->
+                    <div class="boutonQuestionSuivanteConteneur visuallyhidden">
+                        <button class="boutonQuestionSuivante">
+                            <span>Question suivante</span> 
+                            <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                                <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.208333" stop-color="white"/>
+                                <stop offset="1" stop-color="#D6ECFC"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                
+                        </button>
+                    </div>
                 </fieldset>
 
-                <fieldset id="Q2" class="visuallyhidden">
-                    <legend>
-                        <h2>Combien de temps un pingouin peut-il retenir son souffle sous l’eau ?</h2>
-                    </legend>
-                    <picture>
-                        <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
-                        <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-                    </picture>
+                <fieldset id="Q2" class="question visuallyhidden">
+                    <div class="enonoce-question">
+                        <legend class="question__texte">
+                            <h2>Combien de temps un pingouin peut-il retenir son souffle sous l’eau ?</h2>
+                        </legend> 
+                        <img class="questions__imagePrincipale" src="assets/images/470w/quiz_question2_principale_470w.jpg" alt="">
+                    </div>
+
                     <ul class="choixReponses">
                         <li class="choix choixA">
-                            <input id="Q2A" type="radio" name="Q2" value="A" required class="visuallyhidden">
+                            <input id="Q2A" type="radio" name="Q2" value="A" class="visuallyhidden">
                             <label for="Q2A">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                1 minute
+                                <img src="assets/images/470w/quiz_question2_choix1_470w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">1 minute</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixB">
                             <input id="Q2B" type="radio" name="Q2" value="B" class="visuallyhidden">
                             <label for="Q2B">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                5 minutes
+                                <img src="assets/images/320w/quiz_question2_choix2_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">5 minutes</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixC">
                             <input id="Q2C" type="radio" name="Q2" value="C" class="visuallyhidden">
                             <label for="Q2C">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                10 minutes
+                                <img src="assets/images/320w/quiz_question2_choix3_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">10 minutes</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixD">
                             <input id="Q2D" type="radio" name="Q2" value="D" class="visuallyhidden">
                             <label for="Q2D">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                20 minutes
+                                <img src="assets/images/320w/quiz_question2_choix4_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">20 minutes</p>
+                                </div>
                             </label>
                         </li>
                     </ul>
-                    <h3 class="erreur visuallyhidden"></h3>
+                    <h3 class="retroactionReponse"></h3>
                     <p class="explicationReponse"></p>
+                    <!-- <div class="boutonValiderReponseConteneur">
+                        <button class="boutonValiderReponse" disabled="disabled">
+                            <span>Valider ma réponse</span> 
+                            <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                                <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.208333" stop-color="white"/>
+                                <stop offset="1" stop-color="#D6ECFC"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                
+                        </button>
+                    </div> -->
+                    <div class="boutonQuestionSuivanteConteneur visuallyhidden">
+                        <button class="boutonQuestionSuivante">
+                            <span>Question suivante</span> 
+                            <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                                <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.208333" stop-color="white"/>
+                                <stop offset="1" stop-color="#D6ECFC"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                
+                        </button>
+                    </div>
                 </fieldset>
 
-                <fieldset id="Q3" class="visuallyhidden">
-                    <legend>
-                        <h2>Lequel des animaux suivants n’est pas un prédateur des pingouins ?</h2>
-                    </legend>
-                    <picture>
-                        <source srcset="https://via.placeholder.com/405x255/cccccc/9e0b0b">
-                        <img src="https://via.placeholder.com/405x255/cccccc/9e0b0b" alt="">
-                    </picture>
+                <fieldset id="Q3" class="question visuallyhidden">
+                    <div class="enonoce-question">
+                        <legend class="question__texte">
+                            <h2>Lequel des animaux suivants n’est pas un prédateur des pingouins ?</h2>
+                        </legend>
+                        <img class="questions__imagePrincipale" src="assets/images/470w/quiz_question3_principale_470w.jpg" alt="">
+                    </div>
+                   
                     <ul class="choixReponses">
                         <li class="choix choixA">
-                            <input id="Q3A" type="radio" name="Q3" value="A" required class="visuallyhidden">
+                            <input id="Q3A" type="radio" name="Q3" value="A" class="visuallyhidden">
                             <label for="Q3A">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                L’ours polaire
+                                <img src="assets/images/320w/quiz_question3_choix1_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">L’ours polaire</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixB">
                             <input id="Q3B" type="radio" name="Q3" value="B" class="visuallyhidden">
                             <label for="Q3B">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                L’orque
+                                <img src="assets/images/320w/quiz_question3_choix2_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">L’orque</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixC">
                             <input id="Q3C" type="radio" name="Q3" value="C" class="visuallyhidden">
                             <label for="Q3C">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                Le phoque
+                                <img src="assets/images/320w/quiz_question3_choix3_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">Le phoque</p>
+                                </div>
                             </label>
                         </li>
                         <li class="choix choixD">
-                            <input id="Q3D" type="radio" name="Q2" value="D" class="visuallyhidden">
+                            <input id="Q3D" type="radio" name="Q3" value="D" class="visuallyhidden">
                             <label for="Q3D">
-                                <img src="https://via.placeholder.com/320x320/cccccc/9e0b0b" alt="">
-                                Les pingouins n’ont pas de prédateurs naturels
+                                <img src="assets/images/320w/quiz_question3_choix4_320w.jpg" alt="">
+                                <div class="choix__label_bouton">
+                                    <p class="choix__label_bouton_texte">Ils n’ont pas de prédateurs naturels</p>
+                                </div>
                             </label>
                         </li>
                     </ul>
-                    <h3 class="erreur visuallyhidden"></h3>
+                    <h3 class="retroactionReponse"></h3>
                     <p class="explicationReponse"></p>
+                    <!-- <div class="boutonValiderReponseConteneur">
+                        <button class="boutonValiderReponse" disabled="disabled">
+                            <span>Valider ma réponse</span> 
+                            <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                                <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.208333" stop-color="white"/>
+                                <stop offset="1" stop-color="#D6ECFC"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                
+                        </button>
+                    </div> -->
                 </fieldset>
-                <button class="boutonFinQuiz visuallyhidden">Voir les resultats</button>
+                <div class="boutonVoirLesResultatsConteneur visuallyhidden">
+                    <button class="boutonVoirLesResultats">
+                        <span>Voir les resultats</span> 
+                        <svg width="246" height="72" viewBox="0 0 246 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 6.5H236C240.694 6.5 244.5 10.3056 244.5 15V62C244.5 66.6944 240.694 70.5 236 70.5H17C12.3056 70.5 8.5 66.6944 8.5 62V15C8.5 10.3056 12.3056 6.5 17 6.5Z" fill="#1F487A" stroke="#5381BB" stroke-width="3"/>
+                            <path d="M10 1.5H225C229.694 1.5 233.5 5.30558 233.5 10V55C233.5 59.6944 229.694 63.5 225 63.5H10C5.30558 63.5 1.5 59.6944 1.5 55V10C1.5 5.30558 5.30558 1.5 10 1.5Z" fill="url(#paint0_linear_280_150)" stroke="#5381BB" stroke-width="3"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_280_150" x1="34" y1="1.98979e-05" x2="235" y2="32" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.208333" stop-color="white"/>
+                            <stop offset="1" stop-color="#D6ECFC"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>                                
+                    </button>
+                </div>
             </form>
         </section>
 
@@ -206,16 +321,21 @@
             <h1>Bravo! Tu as compléter ce quiz</h1>
             <h3>Merci d’avoir compléter ce quiz! J’espère que vous en avez appris plus sur les pingouins! Voici vos résultats:</h3>
             <div class="resultat__reponse">
-                <div>
-
+                <div class="resultat__reponse__element">
+                    <p>Question 1</p>
+                    <img src="assets/images/crochet.svg" alt="" class="resultat__reponse__element__icone">
                 </div>
-                <div>
-                    
+                <div class="resultat__reponse__element">
+                    <p>Question 2</p>
+                    <img src="assets/images/crochet.svg" alt="" class="resultat__reponse__element__icone">                
                 </div>
-                <div>
-                    
+                <div class="resultat__reponse__element">
+                    <p>Question 3</p>
+                    <img src="assets/images/crochet.svg" alt="" class="resultat__reponse__element__icone">
                 </div>
-
+                <div class="resultat__reponse__element">
+                    <p class="resultat__reponse__total"><strong>Total: </strong></p>
+                </div>
             </div>
         </section>
     </main>

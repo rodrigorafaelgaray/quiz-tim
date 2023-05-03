@@ -23,11 +23,13 @@
     - SECTION QUESTION
         - Barre de progression
         - Fieldset générale
+        - Questions entête
         - Choix de réponses
         - Paragraphes d'erreurs
     - SECTION RESULTAT
     - BOUTONS
     - FOOTER
+    - INTERACTIVITÉ
 */
 
 
@@ -41,7 +43,10 @@ main{
 img{
     max-width: 100%;
     max-height: 100%;
+    border: solid 3px var(--couleur-dominante-principal);
+    border-radius: 25px;
 }
+
 
 #page{
     background-color: var(--couleur-dominante-clair);
@@ -62,6 +67,7 @@ img{
         height: auto;
         padding: 2rem;
         float: left;
+        border: none;
     }
 
     /* Text */
@@ -75,12 +81,6 @@ img{
 /* SECTION QUESTION */
 
     /* barre de progression */
-
-    /* *,
-    *:before,
-    *:after {
-        box-sizing: inherit;
-    } */
 
     .section__barre-de-progression {
         max-width: 235px;
@@ -100,6 +100,10 @@ img{
         padding: 1rem;
         font-size: 20px;
         border-radius: 15px;
+    }
+
+    .progres__0{
+        width: 0%;
     }
 
     .progres__1{
@@ -126,7 +130,50 @@ img{
         border: none;
     }
 
+    /* Questions entête */
+    .questions__entete__sous-titre{
+        color: var(--couleur-dominante-principal);
+    }
+
+    @media only screen and (min-width: 600px){
+        .questions__entete{
+            display: grid;
+            grid-gap: 0;
+            grid-template-areas:
+                "h1 barre-de-progression"
+                "sous-titre sous-titre"
+        }
+        
+        .questions__entete__titre{
+            grid-area: h1;
+        }
+
+        .questions__entete__sous-titre{
+            grid-area: sous-titre;
+        }
+
+        .section__barre-de-progression{
+            grid-area: barre-de-progression;
+        }
+    }
+
     /* Choix de réponses */
+
+    .choixReponses{
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 1024px){
+        .enonoce-question{
+            display: flex;
+        }
+
+        .question__texte{
+            order: 1;
+            margin-left: 20px;
+            width: 50%;
+        }
+    }
 
     .choixReponses{
         display: grid;
@@ -135,7 +182,8 @@ img{
             "choixA"
             "choixB"
             "choixC"
-            "choixD"
+            "choixD";
+        
     }
 
     @media only screen and (min-width: 600px) {
@@ -181,13 +229,55 @@ img{
         list-style: none;
     }
 
+    .choix label img{
+        height: 20rem;
+    }
+
+    .choix__label_bouton{
+        background-image: url(../images/boutons/bouton_initial.svg);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 235px;
+        max-height: 65px;
+    }
+
+    .choix__label_bouton_texte{
+        width: 100%;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 17px;
+        padding-bottom: 20px;
+        font-weight: 600;
+        font-family: 'Inter', serif;
+        color: var(--couleur-dominante-principal);
+    }
+
+    .choix__label_bouton:hover{
+        background-image: url(../images/boutons/boutonChoixReponse_survol.svg);
+        cursor: pointer;
+    }
+
+    .choix__label_bouton_texte:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .questions__imagePrincipale{
+        height: 40rem;
+    }
+
     /* Paragraphes d'erreurs */
 
     .erreur{
         border-top: .3em solid rgb(255, 0, 0);
         border-radius: 1em;
     }
-
 
 /* SECTION RESULTAT */
 .resultat__entete{
@@ -205,10 +295,59 @@ img{
     }
 }
 
+.resultat__reponse{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media only screen and (min-width: 600px){
+    .resultat__reponse{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.resultat__reponse__element{
+    text-align: center;
+}
+
+.resultat__reponse p {
+    font-family: 'Inter', serif;
+    font-weight: 600;
+    color: var(--couleur-dominante-principal);
+}
+
+.resultat__reponse__element__icone{
+    border: none;
+}
+
+.mauvaise-reponse{
+    color: red;
+}
+
+.bonne-reponse{
+    color: rgb(29, 229, 29);
+}
 
 /* BOUTONS */
 
-.bouton__acceuil {
+.bouton__acceuil:hover {
+    cursor: pointer;
+} 
+
+.bouton__acceuil:hover rect, .bouton__acceuil:hover path {
+    fill: var(--couleur-accent_2_clair);
+    transition: fill 0.3s ease-in-out;
+}
+
+.ctnBouton, .boutonQuestionSuivanteConteneur, .boutonVoirLesResultatsConteneur{
+    display: flex;
+    justify-content: center;
+}
+
+.ctnBouton__bouton, .boutonQuestionSuivante, .boutonVoirLesResultats, .bouton__acceuil{
     position: relative;
     background-size: contain;
     background-position: center center;
@@ -217,8 +356,8 @@ img{
     border: none;
     border-radius: 10px;
 }
-  
-.bouton__acceuil span {
+
+.ctnBouton__bouton span, .boutonQuestionSuivante span, .boutonVoirLesResultatsConteneur span, .bouton__acceuil span{
     position: absolute;
     top: 45%;
     left: 50%;
@@ -227,19 +366,24 @@ img{
     font-size: 20px;
     font-weight: bold;
     font-family: 'Inter', sans-serif
-} 
-
-.bouton__acceuil:hover {
-    background-size: contain;
-    cursor: pointer;
-} 
-
-.bouton__acceuil:hover span{
-    font-weight: bolder;
 }
 
-.bouton__acceuil:hover rect, .bouton__acceuil:hover path {
+.ctnBouton__bouton:hover, .boutonQuestionSuivante:hover, .boutonVoirLesResultatsConteneur:hover, .bouton__acceuil:hover{
+    cursor: pointer;
+}
+
+.ctnBouton__bouton:hover path, .boutonQuestionSuivante:hover path, .boutonVoirLesResultatsConteneur:hover path, .bouton__acceuil:hover path{
     fill: var(--couleur-accent_2_clair);
+    transition: fill 0.3s ease-in-out;
+}
+
+
+.ctnBouton__bouton:disabled{
+    opacity: 50%;
+}
+
+.ctnBouton__bouton:disabled path{
+    fill: grey;
     transition: fill 0.3s ease-in-out;
 }
 
@@ -249,9 +393,29 @@ footer{
     color: #F6CC75;
     text-align: center;
     padding: 2em;
-    margin-top: 5rem;
+    margin-top: 20rem;
 }
 
 footer p{
     font-weight: bold;
 }
+
+/* INTERACTIVITÉ */
+input[type="radio"]:checked + label p {
+    background-image: url("../images/boutons/boutonChoixReponse_selectionne.svg");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .js .cache {
+    display: none;
+ }
+ 
+ .js .ctnBoutonSubmit {
+    display: none;
+ }
