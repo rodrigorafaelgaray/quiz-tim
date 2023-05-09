@@ -10,7 +10,6 @@
 @import url(utilitaires.css);
 @import url(base.css);
 @import url(typo.css);
-@import url(grille.css);
 
 /* AJOUTER UNE TABLE DES MATIÈRES POUR POUVOIR NAVIGUER LA CSS*/
 
@@ -268,6 +267,17 @@ img{
         color: white;
     }
 
+    input[type="radio"]:checked + label .choix__label_bouton {
+        background-image: url("../images/boutons/boutonChoixReponse_selectionne.svg");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .questions__imagePrincipale{
         height: 40rem;
     }
@@ -277,6 +287,16 @@ img{
     .erreur{
         border-top: .3em solid rgb(255, 0, 0);
         border-radius: 1em;
+    }
+
+    .bonneReponseBorder{
+        border: 10px solid green;
+        background: green;
+    }
+    
+    .mauvaiseReponseBorder{
+        border: 10px solid red;
+        background: red;
     }
 
 /* SECTION RESULTAT */
@@ -329,6 +349,10 @@ img{
 
 .bonne-reponse{
     color: rgb(29, 229, 29);
+}
+
+#resultat .bouton__acceuil{
+    margin-top: 2rem;
 }
 
 /* BOUTONS */
@@ -393,7 +417,7 @@ footer{
     color: #F6CC75;
     text-align: center;
     padding: 2em;
-    margin-top: 20rem;
+    margin-top: 10rem;
 }
 
 footer p{
@@ -401,16 +425,6 @@ footer p{
 }
 
 /* INTERACTIVITÉ */
-input[type="radio"]:checked + label p {
-    background-image: url("../images/boutons/boutonChoixReponse_selectionne.svg");
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
  .js .cache {
     display: none;

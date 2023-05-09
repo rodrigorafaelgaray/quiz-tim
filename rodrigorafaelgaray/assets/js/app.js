@@ -1,6 +1,6 @@
 /**
  * TIM - QUIZ
- * @author: Rodrigo;
+ * @author: Rodrigo Garay (rodrigorafaelgaray);
  **/
 
 /* Données du quiz - À ADAPTER SELON LES CONTENUS DU QUIZ */
@@ -32,11 +32,9 @@ const objJSON = {
 
 
 document.querySelectorAll('[type=radio]').forEach(function (btnRadio) {
-    // console.log(btnRadio);
     btnRadio.addEventListener('click', function (e) {
         // Activer le bouton de validation
         e.target.closest('.question').querySelector('.ctnBouton__bouton').disabled = false;
-        // quiz.setReponse(e.target.id);
     });
 });
 
@@ -58,14 +56,6 @@ const quiz = {
     initierQuiz: function () {
         // Ajouter un écouteur d'événement au bouton
         this.refBoutonStart.addEventListener('click', this.demarrerQuiz.bind(this));
-
-        // Cacher les questions
-        // this.refArrQuestions.forEach(function (refQuestion) {
-        //     // console.log(refQuestion.classList);
-        //     refQuestion.classList.add('cache');
-        // })
-        // Cacher le bouton de soumission du formulaire
-        // this.refCtnBoutonSubmit.classList.add('cache');
     },
     demarrerQuiz: function () {
         // Cacher l'intro       
@@ -123,7 +113,6 @@ const quiz = {
         const refParapgrapheErreur = refFieldSetQuestionCourrante.querySelector('.explicationReponse');
 
         const refArrIconeResultat = document.querySelectorAll(".resultat__reponse__element__icone");
-        const refArrParapgrapheResultat = document.querySelectorAll(".bonne-mauvaise__reponse")
 
         // Vérifier si la réponse est correcte 
         if (objJSON.bonnesReponses[this.intNoQuestion] === strReponse) {
@@ -135,8 +124,7 @@ const quiz = {
             refArrIconeResultat[this.intNoQuestion].src = "assets/images/crochet.svg"
 
             // Changer l'apparence de la bonne réponse
-            // console.log(refReponse);
-            // refReponse.closest('li').querySelector('input+label').classList.add('bonneReponse');
+            refReponse.closest('li').querySelector('label > img').classList.add('bonneReponseBorder');
 
             // Incrémenter le nombre de bonnes réponses
             this.intNbBonnesReponses++;
@@ -149,10 +137,12 @@ const quiz = {
             refArrIconeResultat[this.intNoQuestion].src = "assets/images/x.svg"
 
             // // Changer l'apparence de la mauvaise réponse 
-            // refReponse.closest('li').querySelector('input+label').classList.add('mauvaiseReponse');
+            refReponse.closest('li').querySelector('label > img').classList.add('mauvaiseReponseBorder');
+
             // // Changer l'apparence de la bonne réponse
-            // const refQuestion = this.refArrQuestions[this.intNoQuestion];
-            // refQuestion.querySelector('#' + objJSON.bonnesReponses[this.intNoQuestion] + '+label').classList.add('bonneReponse');
+            refBonneReponse = document.getElementById(objJSON.bonnesReponses[this.intNoQuestion])
+            console.log(refBonneReponse)
+            refBonneReponse.closest('li').querySelector('label > img').classList.add('bonneReponseBorder');
 
         }
 
@@ -164,8 +154,9 @@ const quiz = {
         });
 
         // Afficher l'explication
-        refParapgrapheErreur.innerText = objJSON.explications.Q1;
+        refParapgrapheErreur.innerText = objJSON.explications["Q" + (this.intNoQuestion + 1)];
 
+        // Si on est rendu à la dernière question, faire apparaître le bouton "Voir les résultat"
         if (this.intNoQuestion == 2) {
             this.refCtnBoutonSubmit.classList.remove("visuallyhidden");
 
@@ -202,15 +193,19 @@ const quiz = {
         //Afficher la section resultats
         this.refResultat.classList.remove("visuallyhidden")
 
+        // Afficher le nombre de bonne réponses
         switch (this.intNbBonnesReponses) {
             case 1:
                 refTotalReponse.innerText += " 1 / 3"
                 break;
-            case 2: 
+            case 2:
                 refTotalReponse.innerText += " 2 / 3"
                 break;
             case 3:
                 refTotalReponse.innerText += " 3 / 3 !!!"
+                break;
+            default:
+                refTotalReponse.innerText += " 0 / 3"
                 break;
         }
     }
@@ -218,6 +213,7 @@ const quiz = {
 
 quiz.initierQuiz();
 
+// Prevent défault du formulaire
 const quizForm = document.querySelector('main');
 
 quizForm.addEventListener('submit', (event) => {
